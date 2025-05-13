@@ -1,0 +1,154 @@
+/* Reset basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: #4CAF50;
+  }
+  
+  /* Main content styling */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  .card.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+  }
+  
+  /* Footer styling */
+  footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+
+  /* -----------------------------------------------------------------Presentación personal */
+.presentation-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .presentation-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .presentation-content img {
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: center;
+  }
+  
+  .presentation-text {
+    flex: 1;
+  }
+  
+  .bandera-chile {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    display: flex;
+
+  }
+  
+  .bandera-chile img {
+    display: flex;
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Grid de cursos */
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+ 
+  .santiago {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .santiago img{
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    image-orientation: right;
+  }
+
+
+
+
