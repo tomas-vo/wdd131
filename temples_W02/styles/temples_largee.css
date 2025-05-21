@@ -1,0 +1,52 @@
+@media (min-width: 768px) {
+  #hamburger {
+    display: none; 
+  }
+
+  #nav-menu {
+    display: block !important;  
+    background-color: transparent;
+  }
+
+  #nav-menu[hidden] {
+    display: block !important; 
+  }
+
+  #nav-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  #nav-menu ul li a {
+    border: none;
+    padding: 1rem 0;
+  }
+
+  #nav-menu ul li a:hover,
+  #nav-menu ul li a:focus {
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    color: #cce0ff;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    max-width: 800px; 
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: rem;
+    padding: rem;
+  }
+
+  .album-grid figure {
+    width: 100%;
+  }
+
+  .album-grid img {
+    max-height: 700px; 
+  }
+}

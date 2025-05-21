@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temple Album</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="styles/temples.css" />
+  <link rel="stylesheet" href="styles/temples_largee.css" />
+
+  
+  <script defer src="scripts/temples.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Temple Album</h1>
+    <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+    <nav id="nav-menu" hidden>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Old</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Large</a></li>
+        <li><a href="#">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Home</h2>
+    <section class="album-grid">
+      <figure>
+        <img src="images/temple1.webp" alt="Salt Lake Temple" />
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple2.jpg" alt="Nauvoo Temple" />
+        <figcaption>Nauvoo Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple3.webp" alt="Laie Hawaii Temple" />
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple4.jpg" alt="Cardston Alberta Temple" />
+        <figcaption>Cardston Alberta Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple5.jpg" alt="Kirtland Temple" />
+        <figcaption>Kirtland Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple6.jpg" alt="Palmyra Temple" />
+        <figcaption>Palmyra Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple7.jpg" alt="Mesa Arizona Temple" />
+        <figcaption>Mesa Arizona Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple8.jpg" alt="Denver Colorado Temple" />
+        <figcaption>Denver Colorado Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple9.jpg" alt="London England Temple" />
+        <figcaption>London England Temple</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Tomás Venegas Osses </p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
