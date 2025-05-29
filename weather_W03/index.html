@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madagascar - La Isla Roja</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Madagascar</h1>
+    </header>
+    <main>
+        <div class="image-container">
+            <picture>
+                <source srcset="images/madagascartest6.jpg" media="(min-width: 600px)">
+                <img src="images/madagascartest6.jpg" alt="Paisaje de Madagascar" loading="lazy" width="800" height="400">
+            </picture>
+        </div>
+        <div class="content-wrapper">
+            <section class="data-section">
+                <h2>Data</h2>
+                <div class="data-item"><span class="label">Area:</span><span>587,041 km²</span></div>
+                <div class="data-item"><span class="label">Population:</span><span>~28 million</span></div>
+                <div class="data-item"><span class="label">Capital:</span><span>Antananarivo</span></div>
+                <div class="data-item"><span class="label">Language:</span><span>Malagasy, French</span></div>
+                <div class="data-item"><span class="label">Currency:</span><span>Ariary (MGA)</span></div>
+            </section>
+            <section class="weather-section">
+                <h2>Weather <span class="emoticon"></span></h2>
+                <img src="images/weather-icon-mobile.svg" alt="Weather Icon" class="svg-icon">
+                <div class="weather-item"><span class="label">Temperature:</span><span id="temperature">25°C</span></div>
+                <div class="weather-item"><span class="label">Conditions:</span><span>Sunny</span></div>
+                <div class="weather-item"><span class="label">Wind:</span><span id="wind-speed">10 km/h</span></div>
+                <div class="weather-item"><span class="label">Wind Chill:</span><span id="windchill">N/A</span></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> © Tomás Venegas Osses</p>
+        <p>Last Modified: <span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>

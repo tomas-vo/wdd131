@@ -1,0 +1,243 @@
+/* Criterio 3: Web Design Principles (Proximity, Alignment, Repetition) */
+/* Criterio 4: Color Contrast (AA level) */
+/* Criterio 1: Development Standards (Global CSS variables, Media Queries) */
+
+:root {
+    --main-color: #cb003b; /* Rojo vibrante, similar a la bandera de Madagascar */
+    --accent-color: #ffffff; /* Blanco para texto sobre colores primarios */
+    --text-color-dark: #333; /* Color de texto oscuro para buen contraste */
+    --bg-color-light: #f9f9f9; /* Fondo claro general */
+    --header-footer-bg: #cb003b; /* Fondo para encabezado y pie de página, cumple contraste */
+    --header-text: #ffffff; /* Color de texto para el encabezado, cumple contraste */
+    --data-weather-bg-mobile: rgba(255, 255, 255, 0.95); /* Fondo casi opaco para mobile */
+    --data-weather-bg-desktop: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para desktop */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para las cajas, mejora la separación */
+    --heading-color: #a00030; /* Un rojo más oscuro para subtítulos */
+  }
+  
+  /* Reset y estilos base */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px; /* Base para rem */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  header {
+    background-color: var(--header-footer-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 10;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+  
+  /* Main content container */
+  main {
+    padding: 0;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+  
+  /* Image container and responsive images */
+  .image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 50%; /* Mantén una proporción para desktop */
+    background-color: #ccc; /* Color de fondo mientras carga la imagen */
+  }
+  
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Wrapper for Data and Weather sections */
+  .content-wrapper {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Data and Weather sections styling */
+  .data-section,
+  .weather-section {
+    background-color: var(--data-weather-bg-mobile);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .data-section h2,
+  .weather-section h2 {
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(203, 0, 59, 0.2);
+    padding-bottom: 0.5rem;
+  }
+  
+  .data-item,
+  .weather-item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .data-item .label,
+  .weather-item .label {
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  /* Criterio 6: SVG - Mobile view only */
+  .weather-section .svg-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+  }
+  
+  /* Criterio 7: Pseudo-Element Emoticon - Inicialmente oculto en mobile */
+  .weather-section .emoticon::after {
+    content: "";
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    display: none;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--header-footer-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    box-shadow: var(--box-shadow);
+  }
+  
+  footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-icon {
+    margin: 0 0.2rem;
+    color: #f7e036;
+  }
+  
+  /* --- Media Query para pantallas de escritorio (min-width: 600px) --- */
+  @media (min-width: 600px) {
+    header h1 {
+      font-size: 3rem;
+    }
+  
+    /* Main debe ser el contenedor que abarca todo para que las cajas puedan ir a los extremos */
+    main {
+      position: relative; /* Asegura que .content-wrapper se posicione respecto a main */
+      width: 100%; /* Asegura que main ocupe todo el ancho disponible */
+      max-width: 100%; /* Elimina el max-width para que las cajas puedan ir más allá */
+      margin: 0; /* Elimina márgenes de main */
+    }
+  
+    .image-container {
+      padding-bottom: 50%;
+    }
+  
+    .content-wrapper {
+      display: grid;
+      /* Define 3 columnas: Data (ancho fijo), Espacio Flexible (1fr), Weather (ancho fijo) */
+      grid-template-columns: minmax(250px, 400px) 1fr minmax(200px, 300px); /* LÍNEA PARA EDITAR: ANCHO DE COLUMNAS */
+      gap: 0;
+      padding: 0;
+  
+      position: absolute;
+      top: 50%; /* Centra verticalmente */
+      left: 0;   /* Extiende completamente a la izquierda */
+      right: 0;  /* Extiende completamente a la derecha */
+      transform: translateY(-50%); /* Ajuste final para centrado vertical */
+  
+      width: 100%; /* Ocupa todo el ancho disponible del main */
+      max-width: none; /* Permite que se extienda completamente */
+      box-sizing: border-box;
+      pointer-events: none;
+      align-items: center;
+    }
+  
+    .data-section,
+    .weather-section {
+      margin-top: 0;
+      pointer-events: auto;
+      background-color: var(--data-weather-bg-desktop);
+      padding: 1.5rem; /* Asegura padding interno para el contenido */
+      box-sizing: border-box;
+    }
+  
+    .data-section {
+      grid-column: 1 / 2; /* Data en la primera columna */
+      justify-self: start; /* Alinea al inicio de su celda */
+      width: 100%;
+      max-width: 400px; /* Controla el ancho de la caja Data */
+      margin-left: 0px; /* LÍNEA PARA EDITAR: SEPARACIÓN DE DATA DEL BORDE IZQUIERDO */
+      margin-right: 0px; /* LÍNEA PARA EDITAR: SIN SUPERPOSICIÓN CENTRAL (o mínima) */
+    }
+  
+    .weather-section {
+      grid-column: 3 / 4; /* Weather en la tercera columna */
+      justify-self: end; /* Alinea al final de su celda */
+      width: 100%;
+      max-width: 300px; /* Controla el ancho de la caja Weather */
+      margin-right: 0px; /* LÍNEA PARA EDITAR: SEPARACIÓN DE WEATHER DEL BORDE DERECHO */
+      margin-left: 0px; /* LÍNEA PARA EDITAR: SIN SUPERPOSICIÓN CENTRAL (o mínima) */
+    }
+  
+    /* Criterio 6: SVG - Oculto en vista amplia */
+    .weather-section .svg-icon {
+      display: none;
+    }
+  
+    /* Criterio 7: Pseudo-Element Emoticon - Visible solo en vista amplia */
+    .weather-section .emoticon::after {
+      content: "⛅";
+      display: inline-block;
+    }
+  }
+  
+  /* Media Query para pantallas muy grandes (opcional, para refinar place-lg-1160.png) */
+  @media (min-width: 1000px) {
+      .data-section {
+          margin-left: 0px; /* LÍNEA PARA EDITAR: SEPARACIÓN DE DATA EN PANTALLAS GRANDES */
+          margin-right: 0px; /* LÍNEA PARA EDITAR: SIN SUPERPOSICIÓN EN PANTALLAS GRANDES */
+      }
+      .weather-section {
+          margin-right: 0px; /* LÍNEA PARA EDITAR: SEPARACIÓN DE WEATHER EN PANTALLAS GRANDES */
+          margin-left: 0px; /* LÍNEA PARA EDITAR: SIN SUPERPOSICIÓN EN PANTALLAS GRANDES */
+      }
+  }
